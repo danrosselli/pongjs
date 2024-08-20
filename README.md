@@ -10,10 +10,22 @@ To install dependencies:
 bun install
 ```
 
-To run:
+To run pong blessed version:
 
 ```bash
-bun run index.ts
+bun run pong-blessed.js
+```
+
+To run pong terminal-kit version:
+
+```bash
+bun run pong-terminalkit.js
+```
+
+To run pong pure console version:
+
+```bash
+bun run pong.js
 ```
 
 This project was created using `bun init` in bun v1.1.24. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
