@@ -1,4 +1,4 @@
-# pongjs
+# pong.js
 
 This project is a Pong game written in JavaScript, designed to run on the Bun runtime.
 To create this terminal-based game, I used libraries like Blessed and Terminal-kit for comparison.
