@@ -69,21 +69,21 @@ class PongGame {
 
         // Cria as raquetes
         this.paddle1 = blessed.box({
-            left: 1,
+            left: 2,
             width: 1,
             height: this.paddleHeight,
             top: Math.floor(this.height / 2) - 2,
             style: { fg: 'blue' },
-            content: '████'
+            content: '█'.repeat(this.paddleHeight)
         });
 
         this.paddle2 = blessed.box({
-            left: this.width - 2,
+            left: this.width - 3,
             width: 1,
             height: this.paddleHeight,
             top: Math.floor(this.height / 2) - 2,
             style: { fg: 'red' },
-            content: '████'
+            content: '█'.repeat(this.paddleHeight)
         });
 
         this.score = blessed.box({
@@ -123,7 +123,7 @@ class PongGame {
         }
 
         // Ball out of bounds
-        if (this.ball.left < 1) {
+        if (this.ball.left <= 1) {
             this.score2++;
             this.resetBall();
         } else if (this.ball.left >= this.width - 2) {
@@ -132,9 +132,9 @@ class PongGame {
         }
 
         // Paddle collision
-        if (this.ball.left === 2 && this.ball.top >= this.paddle1.top && this.ball.top < this.paddle1.top + this.paddleHeight) {
+        if (this.ball.left === 3 && this.ball.top >= this.paddle1.top && this.ball.top < this.paddle1.top + this.paddleHeight) {
             this.ball.dx = -this.ball.dx;
-        } else if (this.ball.left === this.width - 3 && this.ball.top >= this.paddle2.top && this.ball.top < this.paddle2.top + this.paddleHeight) {
+        } else if (this.ball.left === this.width - 4 && this.ball.top >= this.paddle2.top && this.ball.top < this.paddle2.top + this.paddleHeight) {
             this.ball.dx = -this.ball.dx;
         }
 
